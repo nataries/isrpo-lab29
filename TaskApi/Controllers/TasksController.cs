@@ -8,21 +8,21 @@ public class TasksController : ControllerBase {
     private static List<TaskItem> _tasks = new() {
         new TaskItem {
             Id = 1,
-Title = "Изучить ASP.NET Core",
-Priority = "High",
-IsCompleted = true
+            Title = "Изучить ASP.NET Core",
+            Priority = "High",
+            IsCompleted = true
         },
-new TaskItem {
+        new TaskItem {
             Id = 2,
-Title = "Сделать лабораторную №28",
-Priority = "High",
-IsCompleted = false
+            Title = "Сделать лабораторную №28",
+            Priority = "High",
+            IsCompleted = false
         },
-new TaskItem {
+        new TaskItem {
             Id = 3,
-Title = "Написать README",
-Priority = "Normal",
-IsCompleted = false
+            Title = "Написать README",
+            Priority = "Normal",
+            IsCompleted = false
         },
     };
     private static int _nextId = 4;
@@ -95,7 +95,7 @@ IsCompleted = false
         if (task is null)
             return NotFound(new { Message = $"Задача с id={id} не найдена" });
         task.IsCompleted = !task.IsCompleted;
-        
+
         return Ok(task);
     }
 }
